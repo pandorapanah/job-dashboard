@@ -1,0 +1,728 @@
+{
+  "schema_version": "1",
+  "schema_name": "public-jobsearch-summary",
+  "timezone": "Europe/Stockholm",
+  "report_date": "2026-11-08",
+  "generated_at": "2026-11-08T20:56:37+01:00",
+  "language": "fa",
+  "tone_note_fa": "متن‌ها خودمونی و کوتاه نوشته شدن، نه مثل نامه اداری.",
+  "privacy": {
+    "person_identity_included": false,
+    "vacancy_library_states_any_application_was_made": false,
+    "screening_questions_or_answers_included": false,
+    "personal_fit_or_suitability_included": false,
+    "per_vacancy_application_or_candidacy_fields_included": false
+  },
+  "scope_note_fa": "این فایل فقط خلاصهٔ کلی امن و کتابخانهٔ آگهی‌های عمومیه. هویت شخصی توش نیست و نمی‌گه برای کدوم آگهی درخواست رفته یا کسی واجد شرایط هست یا نه.",
+  "aggregates": {
+    "applications_submitted_today": {
+      "value": 2,
+      "label_fa": "درخواست‌هایی که امروز فرستاده شدن",
+      "definition_key": "submitted_on_report_date"
+    },
+    "confirmations_today": {
+      "value": 2,
+      "label_fa": "تأیید رسمی ارسال برای امروز",
+      "definition_key": "official_confirmation_on_report_date"
+    },
+    "applications_submitted_last_7_days": {
+      "value": 2,
+      "label_fa": "درخواست‌های هفت روز اخیر با تاریخ مشخص",
+      "definition_key": "submitted_in_inclusive_7_day_window"
+    },
+    "applications_ready_not_submitted": {
+      "value": 0,
+      "label_fa": "آماده‌هایی که مانعی ندارن و هنوز فرستاده نشدن",
+      "definition_key": "ready_not_submitted",
+      "limitation_fa": "این صفر یعنی هیچ درخواستی الان آمادهٔ ارسال بدون مانع نیست. معنیش این نیست که هیچ کاری تو مرحلهٔ آماده‌سازی نیست."
+    },
+    "applications_in_active_preparation": {
+      "value": 1,
+      "label_fa": "داره آماده می‌شه و هنوز تمام نشده",
+      "definition_key": "active_unfinished_preparation"
+    },
+    "applications_requiring_attention": {
+      "value": 1,
+      "label_fa": "مواردی که هنوز به توجه نیاز دارن",
+      "definition_key": "requires_attention"
+    },
+    "new_employer_responses_today": {
+      "value": 0,
+      "label_fa": "پاسخ جدید کارفرما امروز",
+      "definition_key": "selection_response_on_report_date",
+      "limitation_fa": "این عدد از آخرین بررسی ترکر اومده، نه از یک مرور کامل همهٔ صندوق‌های ایمیل."
+    },
+    "interview_invitations_today": {
+      "value": 0,
+      "label_fa": "دعوت به مصاحبه امروز",
+      "definition_key": "explicit_interview_invitation_on_report_date",
+      "limitation_fa": "تأییدهای خودکار ارسال یا جمله‌های عمومی استخدامی، دعوت به مصاحبه حساب نمی‌شن."
+    },
+    "all_officially_submitted": {
+      "value": 7,
+      "label_fa": "همهٔ درخواست‌هایی که ارسال رسمیشون ثبت شده",
+      "definition_key": "officially_submitted_any_time"
+    },
+    "submitted_by_applicant_bot_with_known_date": {
+      "value": 2,
+      "label_fa": "ارسال‌شده توسط Applicant Bot با تاریخ مشخص",
+      "definition_key": "applicant_bot_dated_sends"
+    },
+    "historical_submitted_unknown_exact_date": {
+      "value": 5,
+      "label_fa": "درخواست‌های تاریخی با تأیید پورتال و تاریخ دقیق نامشخص",
+      "definition_key": "historical_portal_confirm_unknown_date"
+    }
+  },
+  "counting_definitions": {
+    "submitted_on_report_date": {
+      "en": "Officially submitted rows whose canonical send date falls on report_date in Europe/Stockholm. Official submission means portal confirmation or official employer email. Rows without a canonical send date cannot count as submitted today.",
+      "fa": "فقط درخواست‌هایی که ارسال رسمیشون ثبت شده و تاریخ مشخص ارسالشون همون روز گزارش باشه."
+    },
+    "official_confirmation_on_report_date": {
+      "en": "Rows with a parsed portal or official-email confirmation timestamp on report_date. Confirmation time is not the same thing as submission time.",
+      "fa": "تأیید پورتال یا ایمیل رسمی کارفرما که تاریخش همون روز گزارش باشه. زمان تأیید لزوماً با زمان ارسال یکی نیست."
+    },
+    "submitted_in_inclusive_7_day_window": {
+      "en": "Officially submitted rows whose canonical send date is between report_date minus 6 days and report_date inclusive. Historical rows without a canonical date are excluded from this window.",
+      "fa": "ارسال‌های رسمی با تاریخ مشخص در بازهٔ هفت‌روزه تا روز گزارش. موارد بدون تاریخ مشخص تو این عدد نمیان."
+    },
+    "ready_not_submitted": {
+      "en": "Rows whose package is ready to send: not officially sent, not set aside, and not waiting on remaining blockers or other attention. This is not a count of all unfinished preparation.",
+      "fa": "فقط اونایی که بسته‌شون آماده‌ست، هنوز فرستاده نشدن، کنار گذاشته نشدن و الان مانع بازی هم ندارن. این عدد همهٔ کارهای ناتمام آماده‌سازی رو نمی‌گه."
+    },
+    "requires_attention": {
+      "en": "Unsubmitted rows that still have remaining blockers or another recorded attention need. Set-aside rows and rows with no new action are excluded.",
+      "fa": "مواردی که هنوز فرستاده نشدن و یک مانع یا کار باز براشون مونده."
+    },
+    "selection_response_on_report_date": {
+      "en": "A dated employer selection outcome on report_date. Automatic acknowledgements and notes about a login problem are not selection responses. Not based on a full inbox sweep.",
+      "fa": "پاسخ انتخابی کارفرما با تاریخ مشخص در روز گزارش. رسید خودکار ارسال یا مشکل ورود، پاسخ انتخابی حساب نمی‌شه."
+    },
+    "explicit_interview_invitation_on_report_date": {
+      "en": "An explicit interview invitation dated on report_date. Generic recruitment wording about contacting candidates for interviews, and negated interview phrases, are ignored.",
+      "fa": "فقط دعوت مشخص به مصاحبه در روز گزارش. جمله‌های کلی استخدامی دعوت حساب نمی‌شن."
+    },
+    "officially_submitted_any_time": {
+      "en": "Any row whose official-send record shows an official submission (portal confirmation or official email), regardless of whether a canonical send date is known.",
+      "fa": "هر درخواستی که ارسال رسمیش ثبت شده، چه تاریخ دقیق داشته باشه چه نه."
+    },
+    "historical_portal_confirm_unknown_date": {
+      "en": "Officially submitted historical rows that have a portal confirmation but no canonical send date.",
+      "fa": "درخواست‌های قدیمی‌تر که تأیید پورتال دارن، ولی تاریخ دقیق ارسالشون معلوم نیست."
+    },
+    "applicant_bot_dated_sends": {
+      "en": "This snapshot counts submissions whose private records contain verified Applicant Bot filing evidence. It is not a count of every row that happens to have a known send date. The two counted here are Bot-supported filings. Historical submissions from other or unknown channels are counted separately even if a date is later learned. Future snapshots should classify the actor from submission provenance, not by treating a known date as proof that Applicant Bot sent it.",
+      "fa": "این ۲ تا رو Applicant Bot خودش فرستاده و این از شواهد همون ارسال‌های خصوصی معلومه، نه فقط به‌خاطر اینکه تاریخشون نوشته شده. ارسال‌های قدیمی از مسیرهای دیگه جدا حساب می‌شن؛ حتی اگه بعداً تاریخشون پیدا بشه، معنیش این نیست که Bot فرستاده‌شون. بعداً هم باید از خود شواهد ارسال فهمید چه کسی فرستاده، نه از روی وجود تاریخ."
+    },
+    "active_unfinished_preparation": {
+      "en": "Private application records that show unfinished active draft or preparation work. Sent applications, set-aside records, rejected or closed historical outcomes, and vacancies that were only discovered or listed without a prepared draft are not counted. This can include a draft that still has unanswered factual questions, so it is not the same as ready-to-send.",
+      "fa": "فقط وقتی تو سابقهٔ خصوصی مشخصه که آماده‌سازی یه درخواست واقعاً شروع شده و هنوز تموم نشده. ارسال‌شده‌ها، کنارگذاشته‌ها، نتیجه‌های قدیمی، و آگهی‌هایی که فقط دیده شدن ولی براشون پیش‌نویس آماده نشده، تو این عدد نمیان. اگه هنوز چندتا جواب مونده باشه هم ممکنه این‌جا بشمره؛ با «آمادهٔ ارسال» یکی نیست."
+    }
+  },
+  "next_actions": [
+    {
+      "kind": "awaiting_factual_answers",
+      "label_fa": "یه کار مونده که چندتا جواب واقعی لازم داره؛ تا اون جواب‌ها بیان، همون یکی منتظر می‌مونه و بقیه کارها می‌تونن جلو برن.",
+      "identifies_employer": false
+    }
+  ],
+  "public_vacancies_note_fa": "این فهرست از آگهی‌های عمومی‌ای میاد که تو دورهٔ کشف همین روز دیده و ذخیره شدن. این کتابخانه نمی‌گه برای هیچ‌کدام درخواست رفته، آماده‌سازی شده، یا کسی براشون مناسب بوده. وضعیت روی کارت فقط مال تاریخ مهلت خود آگهی‌ه و چهار حالت داره: مهلت گذشته، مهلت امروز، مهلت آینده، یا نامشخص. مهلت امروز یعنی تاریخش با روز گزارش یکی‌ه؛ چون ساعت بسته شدنش معلوم نیست، باز بودن آگهی تا همین لحظه یا تا نصف‌شب تضمین نشده. این فقط یه دسته‌بندی تاریخیه، نه تأیید اینکه آگهی الان بازه.",
+  "public_vacancies": [
+    {
+      "title_sv": "HR- och löneadministratör",
+      "title_explain_fa": "اداره‌کننده منابع انسانی و حقوق",
+      "employer": "A Hub AB",
+      "location_public": null,
+      "advertised_deadline_date": "2027-05-02",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31676746",
+      "description_fa": "این یکی نقشش «اداره‌کننده منابع انسانی و حقوق»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Skolkurator",
+      "title_explain_fa": "مشاور مدرسه",
+      "employer": "AcadeMedia / NTI Gymnasiet Johanneberg",
+      "location_public": null,
+      "advertised_deadline_date": "2026-12-11",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31697594",
+      "description_fa": "این یکی نقشش «مشاور مدرسه»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Rekryteringsassistent på deltid",
+      "title_explain_fa": "دستیار جذب نیرو به‌صورت پاره‌وقت",
+      "employer": "Adecco",
+      "location_public": null,
+      "advertised_deadline_date": "2026-12-06",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31696859",
+      "description_fa": "این یکی نقشش «دستیار جذب نیرو به‌صورت پاره‌وقت»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Rekryteringspartner till myndighet",
+      "title_explain_fa": "همکار جذب نیرو برای یه نهاد دولتی",
+      "employer": "Bemannia",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-18",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31688986",
+      "description_fa": "این یکی نقشش «همکار جذب نیرو برای یه نهاد دولتی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Lön- och HR-administratör",
+      "title_explain_fa": "اداره‌کننده حقوق و منابع انسانی",
+      "employer": "Benders Sverige AB",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-22",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://benders.varbi.com/se/what:job/jobID:987551/",
+      "description_fa": "این یکی نقشش «اداره‌کننده حقوق و منابع انسانی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR Coordinator",
+      "title_explain_fa": "هماهنگ‌کننده منابع انسانی",
+      "employer": "DFDS AB",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-08",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت امروز",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31637728",
+      "description_fa": "این یکی نقشش «هماهنگ‌کننده منابع انسانی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Stödpedagog till daglig verksamhet",
+      "title_explain_fa": "پشتیبان آموزشی برای فعالیت روزانه",
+      "employer": "Föreningen Betaniahemmet",
+      "location_public": "گوتنبرگ، Nya Varvet",
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31658111",
+      "description_fa": "این آگهی برای نقش پشتیبان آموزشی (stödpedagog) تو فعالیت روزانه Nya Varvet مال انجمن Betaniahemmetـه. نصف کار نزدیک شرکت‌کننده‌هاست و نصفش برنامه‌ریزی، مستندسازی و هماهنگی.",
+      "requirements_fa": "آموزش مرتبط با حوزه معلولیت، علوم رفتاری یا معادل از نظر کارفرما. تجربه کار با گروه هدف، ارتباط جایگزین و رویکرد کم‌تنش امتیاز حساب می‌شه. توانایی خوب تو سوئدی گفتاری و نوشتاری لازمه.",
+      "last_public_ad_check": "2026-11-08T12:12:38+01:00",
+      "last_public_ad_check_precision": "datetime",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Operativ personalplanerare",
+      "title_explain_fa": "برنامه‌ریز عملیاتی نیروی انسانی",
+      "employer": "Göteborgs Spårvägar",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-22",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:985957/",
+      "description_fa": "این یکی نقشش «برنامه‌ریز عملیاتی نیروی انسانی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administratör schemaplanering, förskoleförvaltningen Centrum",
+      "title_explain_fa": "اداره‌کننده برنامه‌ریزی شیفت در بخش پیش‌دبستانی مرکز",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-19",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:987666/",
+      "description_fa": "این یکی نقشش «اداره‌کننده برنامه‌ریزی شیفت در بخش پیش‌دبستانی مرکز»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administratör, centrala schemagruppen Sydväst",
+      "title_explain_fa": "اداره‌کننده برنامه‌ریزی شیفت تو گروه مرکزی جنوب‌غرب",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-13",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:984396/",
+      "description_fa": "این یکی نقشش «اداره‌کننده برنامه‌ریزی شیفت تو گروه مرکزی جنوب‌غرب»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Lärarassistent, Kungsladugårdsskolan",
+      "title_explain_fa": "دستیار معلم در Kungsladugårdsskolan",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:988256/",
+      "description_fa": "این یکی نقشش «دستیار معلم در Kungsladugårdsskolan»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Skolkurator, Kärraskolan",
+      "title_explain_fa": "مشاور مدرسه در Kärraskolan",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:988183/",
+      "description_fa": "این یکی نقشش «مشاور مدرسه در Kärraskolan»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Skolstödspedagog, Kålltorpsskolan",
+      "title_explain_fa": "پشتیبان آموزشی مدرسه در Kålltorpsskolan",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-12",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:985140/",
+      "description_fa": "این یکی نقشش «پشتیبان آموزشی مدرسه در Kålltorpsskolan»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Studie- och yrkesvägledare, Vägledningscentrum",
+      "title_explain_fa": "مشاور تحصیلی و شغلی در Vägledningscentrum",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-19",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:987412/",
+      "description_fa": "این یکی نقشش «مشاور تحصیلی و شغلی در Vägledningscentrum»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Stödpedagog, BmSS Sydväst",
+      "title_explain_fa": "پشتیبان آموزشی در اقامتگاه خدماتی جنوب‌غرب",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-10",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:983758/",
+      "description_fa": "این یکی نقشش «پشتیبان آموزشی در اقامتگاه خدماتی جنوب‌غرب»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Stödpedagog, Övralidsgatan BmSS",
+      "title_explain_fa": "پشتیبان آموزشی در اقامتگاه خدماتی Övralidsgatan",
+      "employer": "Göteborgs Stad",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:984274/",
+      "description_fa": "این یکی نقشش «پشتیبان آموزشی در اقامتگاه خدماتی Övralidsgatan»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR-koordinator",
+      "title_explain_fa": "هماهنگ‌کننده منابع انسانی",
+      "employer": "Göteborgs Stad, Idrott och förening",
+      "location_public": "گوتنبرگ",
+      "advertised_deadline_date": "2026-11-08",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت امروز",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31638262",
+      "description_fa": "این آگهی برای نقش هماهنگ‌کننده منابع انسانی تو بخش ورزش و انجمن‌های شهرداری گوتنبرگه. کارش بیشتر نگهداری سیستم‌های اچ‌آر، کارهای اداری مرتبط با حقوق، تهیه آمار و پشتیبانی روزمره‌ست.",
+      "requirements_fa": "تحصیلات دانشگاهی تو حوزه منابع انسانی و امور کاری، تجربه کار اداری، و آشنایی با سیستم‌های اچ‌آر. تجربه کار با سیستم حقوق و سابقه کار تو بخش عمومی امتیاز حساب می‌شه.",
+      "last_public_ad_check": "2026-11-08T12:12:37+01:00",
+      "last_public_ad_check_precision": "datetime",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Personaladministratör",
+      "title_explain_fa": "اداره‌کننده امور پرسنلی",
+      "employer": "Göteborgs Stad, Kulturförvaltningen",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-09",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:979977/",
+      "description_fa": "این یکی نقشش «اداره‌کننده امور پرسنلی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Koordinator Skola som arena",
+      "title_explain_fa": "هماهنگ‌کننده برنامه «مدرسه به‌عنوان میدان»",
+      "employer": "Göteborgs Stad, Socialförvaltningen Nordost",
+      "location_public": "گوتنبرگ",
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://goteborgsstad.varbi.com/se/what:job/jobID:985765/",
+      "description_fa": "شهرداری گوتنبرگ دو نفر هماهنگ‌کننده برای برنامه «مدرسه به‌عنوان میدان» می‌خواد؛ یکی استخدام دائمی و یکی جایگزین یک‌ساله. کار اینه که فضای مدرسه بیرون از ساعت درس به یک جای امن و فعال برای بچه‌ها و بزرگ‌ترها تبدیل بشه.",
+      "requirements_fa": "مدرک دانشگاهی تو کار اجتماعی، علوم رفتاری یا اجتماعی، یا آموزش و تجربه‌ای که کارفرما معادل بدونه. تجربه کار اجتماعی جامعه‌محور و سابقه مستند از رهبری مستقل فرایندها تو همکاری بین چند نهاد لازمه.",
+      "last_public_ad_check": "2026-11-08T12:09:07+01:00",
+      "last_public_ad_check_precision": "datetime",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Personalhandläggare (vikariat)",
+      "title_explain_fa": "کارشناس امور پرسنلی، جایگزین موقت",
+      "employer": "Göteborgs universitet",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-22",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31698564",
+      "description_fa": "این یکی نقشش «کارشناس امور پرسنلی، جایگزین موقت»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Personaladministratör, Transportavdelningen",
+      "title_explain_fa": "اداره‌کننده امور پرسنلی در بخش حمل‌ونقل",
+      "employer": "Kriminalvården",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-13",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://kriminalvarden.varbi.com/se/what:job/jobID:982750/",
+      "description_fa": "این یکی نقشش «اداره‌کننده امور پرسنلی در بخش حمل‌ونقل»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administrativ assistent",
+      "title_explain_fa": "دستیار اداری",
+      "employer": "Manpower (assignment at Saab)",
+      "location_public": null,
+      "advertised_deadline_date": "2026-12-03",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31692362",
+      "description_fa": "این یکی نقشش «دستیار اداری»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administrativ assistent",
+      "title_explain_fa": "دستیار اداری",
+      "employer": "Poolia",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-13",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31695778",
+      "description_fa": "این یکی نقشش «دستیار اداری»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR-administratör för kommande uppdrag",
+      "title_explain_fa": "اداره‌کننده منابع انسانی برای مأموریت‌های بعدی",
+      "employer": "PS Partner AB",
+      "location_public": null,
+      "advertised_deadline_date": "2027-04-11",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31588875",
+      "description_fa": "این یکی نقشش «اداره‌کننده منابع انسانی برای مأموریت‌های بعدی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR-administratör, Margretelund",
+      "title_explain_fa": "اداره‌کننده منابع انسانی در Margretelund",
+      "employer": "Statens institutionsstyrelse",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-17",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31679293",
+      "description_fa": "این یکی نقشش «اداره‌کننده منابع انسانی در Margretelund»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Personalassistent inom rekrytering och bemanning",
+      "title_explain_fa": "دستیار امور پرسنلی در جذب و تأمین نیرو",
+      "employer": "StudentConsulting",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-21",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31640039",
+      "description_fa": "این یکی نقشش «دستیار امور پرسنلی در جذب و تأمین نیرو»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administratör till offentlig sektor",
+      "title_explain_fa": "اداره‌کننده برای بخش عمومی",
+      "employer": "Sway Sourcing",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-11",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31697704",
+      "description_fa": "این یکی نقشش «اداره‌کننده برای بخش عمومی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Omställningscoach",
+      "title_explain_fa": "مربی همراهی برای تغییر شغلی",
+      "employer": "Talenti Sverige AB",
+      "location_public": null,
+      "advertised_deadline_date": "2026-12-31",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31697003",
+      "description_fa": "این یکی نقشش «مربی همراهی برای تغییر شغلی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR-konsult",
+      "title_explain_fa": "مشاور منابع انسانی",
+      "employer": "Västra Götalandsregionen, Folktandvården",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-19",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://vgregion.varbi.com/se/what:job/jobID:985407/",
+      "description_fa": "این یکی نقشش «مشاور منابع انسانی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "HR-administratör",
+      "title_explain_fa": "اداره‌کننده منابع انسانی",
+      "employer": "Västra Götalandsregionen, NU-sjukvården",
+      "location_public": null,
+      "advertised_deadline_date": "2026-11-20",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://vgregion.varbi.com/se/what:job/jobID:985000/",
+      "description_fa": "این یکی نقشش «اداره‌کننده منابع انسانی»ئه. توضیح بیشتری از آگهی ذخیره نشده.",
+      "requirements_fa": null,
+      "last_public_ad_check": "2026-11-08",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    },
+    {
+      "title_sv": "Administratör",
+      "title_explain_fa": "اداره‌کننده",
+      "employer": "Västra Götalandsregionen, Närhälsan Majorna rehabmottagning",
+      "location_public": "گوتنبرگ، Majorna (Fiskehamn)",
+      "advertised_deadline_date": "2026-11-18",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31685676",
+      "description_fa": "این آگهی برای نقش اداره‌کننده‌ست تو درمانگاه توان‌بخشی Närhälsan تو Majorna. کارش ترکیبی از پذیرش مراجعه‌کننده‌ها و کارهای اداری روزمره‌ست.",
+      "requirements_fa": "دیپلم کامل دبیرستان، توانایی خوب تو حرف زدن و نوشتن به سوئدی، و علاقه به کار با ابزارهای دیجیتال. تجربه پذیرش، کار تو مراقبت اولیه منطقه‌ای، و آشنایی با چند سیستم اداری که تو خود آگهی اومده امتیاز حساب می‌شه.",
+      "last_public_ad_check": "2026-11-08T12:12:38+01:00",
+      "last_public_ad_check_precision": "datetime",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "2026-11-08T20:46:39+01:00",
+        "result": "ok"
+      }
+    }
+  ],
+  "vacancy_date_status_notes_fa": {
+    "مهلت گذشته": "تاریخ مهلت آگهی قبل از روز این گزارش بوده.",
+    "مهلت امروز": "مهلتش همین امروزِ گزارشه. ساعت بسته شدنش معلوم نیست، برای همین نمی‌شه گفت حتماً تا الان بازه یا تا نصف‌شب باز می‌مونه.",
+    "مهلت آینده": "تاریخ مهلت آگهی بعد از روز این گزارشه. این فقط دستهٔ تاریخیه، نه تأیید اینکه درخواست حتماً پذیرفته می‌شه.",
+    "نامشخص": "تاریخ مهلت از منبع عمومی به‌اندازهٔ کافی معلوم نبود."
+  }
+}

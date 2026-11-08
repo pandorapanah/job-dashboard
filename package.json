@@ -1,0 +1,11 @@
+{
+  "name": "job-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build-site.mjs",
+    "publish": "node scripts/publish-report.mjs",
+    "privacy": "node scripts/privacy-gate.mjs"
+  }
+}

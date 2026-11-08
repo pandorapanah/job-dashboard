@@ -1,0 +1,125 @@
+{
+  "schema_version": "1",
+  "schema_name": "public-jobsearch-summary",
+  "timezone": "Europe/Stockholm",
+  "report_date": "1999-01-01",
+  "generated_at": "1999-01-01T10:00:00+01:00",
+  "language": "fa",
+  "tone_note_fa": "نمونهٔ آزمایشی، واقعیت نیست.",
+  "privacy": {
+    "person_identity_included": false,
+    "vacancy_library_states_any_application_was_made": false,
+    "screening_questions_or_answers_included": false,
+    "personal_fit_or_suitability_included": false,
+    "per_vacancy_application_or_candidacy_fields_included": false
+  },
+  "scope_note_fa": "این فایل فقط یک نمونهٔ آزمایشی برای آزمون است و گزارش واقعی نیست.",
+  "aggregates": {
+    "applications_submitted_today": {
+      "value": 3,
+      "label_fa": "نمونهٔ آزمایشی: ارسال امروز",
+      "definition_key": "submitted_on_report_date"
+    },
+    "confirmations_today": {
+      "value": 4,
+      "label_fa": "نمونهٔ آزمایشی: تأیید امروز",
+      "definition_key": "official_confirmation_on_report_date"
+    },
+    "applications_submitted_last_7_days": {
+      "value": 5,
+      "label_fa": "نمونهٔ آزمایشی: هفت روز",
+      "definition_key": "submitted_in_inclusive_7_day_window"
+    },
+    "applications_ready_not_submitted": {
+      "value": 6,
+      "label_fa": "نمونهٔ آزمایشی: آمادهٔ بدون مانع",
+      "definition_key": "ready_not_submitted",
+      "limitation_fa": "نمونهٔ آزمایشی: این صفر نیست و واقعیت هم نیست."
+    },
+    "applications_in_active_preparation": {
+      "value": 7,
+      "label_fa": "نمونهٔ آزمایشی: آماده‌سازی ناتمام",
+      "definition_key": "active_unfinished_preparation"
+    },
+    "applications_requiring_attention": {
+      "value": 8,
+      "label_fa": "نمونهٔ آزمایشی: نیازمند توجه",
+      "definition_key": "requires_attention"
+    },
+    "new_employer_responses_today": {
+      "value": 9,
+      "label_fa": "نمونهٔ آزمایشی: پاسخ",
+      "definition_key": "selection_response_on_report_date",
+      "limitation_fa": "نمونهٔ آزمایشی: این مرور کامل صندوق ایمیل نیست."
+    },
+    "interview_invitations_today": {
+      "value": 10,
+      "label_fa": "نمونهٔ آزمایشی: مصاحبه",
+      "definition_key": "explicit_interview_invitation_on_report_date",
+      "limitation_fa": "نمونهٔ آزمایشی: دعوت واقعی نیست."
+    },
+    "all_officially_submitted": {
+      "value": 20,
+      "label_fa": "نمونهٔ آزمایشی: کل ارسال",
+      "definition_key": "officially_submitted_any_time"
+    },
+    "submitted_by_applicant_bot_with_known_date": {
+      "value": 6,
+      "label_fa": "نمونهٔ آزمایشی: ارسال Bot",
+      "definition_key": "applicant_bot_dated_sends"
+    },
+    "historical_submitted_unknown_exact_date": {
+      "value": 4,
+      "label_fa": "نمونهٔ آزمایشی: تاریخ نامشخص",
+      "definition_key": "historical_portal_confirm_unknown_date"
+    }
+  },
+  "counting_definitions": {
+    "submitted_on_report_date": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "official_confirmation_on_report_date": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "submitted_in_inclusive_7_day_window": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "ready_not_submitted": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "requires_attention": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "selection_response_on_report_date": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "explicit_interview_invitation_on_report_date": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "officially_submitted_any_time": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "historical_portal_confirm_unknown_date": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "applicant_bot_dated_sends": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" },
+    "active_unfinished_preparation": { "en": "EXAMPLE ONLY definition", "fa": "نمونهٔ آزمایشی برای تعریف" }
+  },
+  "next_actions": [
+    {
+      "kind": "example_only",
+      "label_fa": "نمونهٔ آزمایشی: قدم بعدی ساختگی است و کارفرما ندارد.",
+      "identifies_employer": false
+    }
+  ],
+  "public_vacancies_note_fa": "نمونهٔ آزمایشی: این آگهی واقعی نیست و وضعیت درخواست کسی را نمی‌گوید.",
+  "public_vacancies": [
+    {
+      "title_sv": "EXAMPLE-ONLY-NOT-A-REAL-VACANCY",
+      "title_explain_fa": "نمونهٔ آزمایشی، واقعیت نیست",
+      "employer": "EXAMPLE-ONLY-NOT-A-REAL-EMPLOYER",
+      "location_public": "EXAMPLE-ONLY-LOCATION",
+      "advertised_deadline_date": "1999-02-01",
+      "advertised_deadline_precision": "date_only",
+      "vacancy_date_status": "مهلت آینده",
+      "original_ad_url": "https://example.com/example-only-not-a-real-vacancy",
+      "description_fa": "نمونهٔ آزمایشی، واقعیت نیست.",
+      "requirements_fa": null,
+      "last_public_ad_check": "1999-01-01",
+      "last_public_ad_check_precision": "date_only",
+      "url_check": {
+        "http_status": 200,
+        "checked_at": "1999-01-01T10:00:00+01:00",
+        "result": "ok"
+      }
+    }
+  ],
+  "vacancy_date_status_notes_fa": {
+    "مهلت گذشته": "نمونهٔ آزمایشی: مهلت گذشته",
+    "مهلت امروز": "نمونهٔ آزمایشی: مهلت امروز",
+    "مهلت آینده": "نمونهٔ آزمایشی: مهلت آینده",
+    "نامشخص": "نمونهٔ آزمایشی: نامشخص"
+  }
+}
